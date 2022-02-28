@@ -6,43 +6,9 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <EditText
-        android:id="@+id/textNoteText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Note text"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/spinnerChapters"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinnerChapters"
-        app:layout_constraintTop_toBottomOf="@+id/textNoteTitle" />
-
-    <Spinner
-        android:id="@+id/spinnerChapters"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/textNoteTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Note title"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/spinnerChapters"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/spinnerChapters"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerChapters" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_content_main"
+        android:name="com.gemmausiku.mythesis.NoteListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>
