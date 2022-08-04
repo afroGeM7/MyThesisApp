@@ -12,11 +12,11 @@ import com.gemmausiku.mythesis.databinding.FragmentNoteBinding
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class NoteFragment : Fragment() {
+    private var notePosition = POSITION_NOT_SET
 
     private var _binding: FragmentNoteBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    // This property is only valid between onCreateView and  the onDestroyView
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -33,14 +33,14 @@ class NoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapterCourses = ArrayAdapter(
+        val adapterChapters = ArrayAdapter(
             requireContext(),
             R.layout.simple_spinner_item,
             DataManager.chapters.values.toList()
         )
-        // Specify the layout to use when the list of choices appears
-        adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        // Apply the adapter to the spinner
+        // layout with  list  of   options is specified here
+        adapterChapters.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+        // adapter for the spinner  is applied  here using adapterChapters
         binding.spinnerChapters.adapter = adapterChapters
 
         notePosition = savedInstanceState?.getInt(NOTE_POSITION, POSITION_NOT_SET)
@@ -63,12 +63,12 @@ class NoteFragment : Fragment() {
         binding.noteTitle.setText(note.title)
         binding.noteText.setText(note.text)
 
-        val coursePosition = DataManager.chapters.values.indexOf(note.chapter)
-        binding.spinnerChapters.setSelection(coursePosition)
+        val chapterPosition = DataManager.chapters.values.indexOf(note.chapter)
+        binding.spinnerChapters.setSelection(chapterPosition)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // if action bar is  available items are added there
         inflater.inflate(R.menu.menu_main, menu)
     }
 
@@ -106,7 +106,7 @@ class NoteFragment : Fragment() {
         val note = DataManager.notes[notePosition]
         note.title = binding.noteTitle.text.toString()
         note.text = binding.noteText.text.toString()
-        note.course = binding.spinnerChapters.selectedItem as ChapterInfo?
+        note.chapter = binding.spinnerChapters.selectedItem as ChapterInfo?
     }
 
 

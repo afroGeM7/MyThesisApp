@@ -32,13 +32,13 @@
                 android:background="@drawable/ic_baseline_assignment_24"
                 android:backgroundTint="@color/white"
                 android:contentDescription="@string/icon"
-                android:tint="@color/purple_700"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textChapter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_assignment_24"
-                tools:srcCompat="@drawable/ic_baseline_assignment_24" />
+                tools:srcCompat="@drawable/ic_baseline_assignment_24"
+                app:tint="@color/purple_700" />
 
             <TextView
                 android:id="@+id/textChapter"

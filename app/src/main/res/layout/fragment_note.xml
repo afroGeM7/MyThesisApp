@@ -4,21 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoteListFragment">
-
-    <EditText
-        android:id="@+id/textNoteText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Note text"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/spinnerChapters"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinnerChapters"
-        app:layout_constraintTop_toBottomOf="@+id/textNoteTitle" />
+    tools:context=".NoteFragment">
 
     <Spinner
         android:id="@+id/spinnerChapters"
@@ -30,7 +16,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:id="@+id/textNoteText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Note text"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerChapters"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerChapters"
+        app:layout_constraintTop_toBottomOf="@+id/textNoteTitle" />
+
 
     <EditText
         android:id="@+id/textNoteTitle"
@@ -44,5 +48,6 @@
         app:layout_constraintEnd_toEndOf="@+id/spinnerChapters"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/spinnerChapters"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerChapters" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChapters"
+        tools:ignore="TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

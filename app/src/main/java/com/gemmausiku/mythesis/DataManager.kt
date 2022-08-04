@@ -1,6 +1,6 @@
 package com.gemmausiku.mythesis
 
-object DataManager {             // Data Manager properties
+object DataManager {             // Data Manager only  has  properties and  is  a Singleton
     val chapters = HashMap<String, ChapterInfo>()
     val notes = ArrayList<NoteInfo>()
 
@@ -8,8 +8,6 @@ object DataManager {             // Data Manager properties
         initializeChapters() //initializer block
         initializeNotes()
     }
-
-
 
     private fun initializeChapters() {
         var chapter = ChapterInfo("chapter 1", "Introduction")
