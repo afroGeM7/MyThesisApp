@@ -1,14 +1,15 @@
 package com.gemmausiku.mythesis
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gemmausiku.mythesis.databinding.FragmentNoteListBinding
+
 
 
 /**
@@ -42,14 +43,12 @@ class NoteListFragment : Fragment() {
         }
     }
 
-    private fun onNoteClick(noteId: Int) {
+    private fun onNoteClick(noteId:Int) {
         val action = NoteListFragmentDirections.actionNoteListFragmentToNoteFragment(noteId)
         activity?.findNavController(R.id.nav_host_fragment_content_main)?.navigate(action)
     }
 
-    class NoteListFragmentDirections {
 
-    }
 
     override fun onResume() {
         super.onResume()

@@ -68,8 +68,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.list_notes -> {
                 handleSelection("Notes")
             }
-            R.id.nav_courses -> {
-                handleSelection("Courses")
+            R.id.nav_chapters -> {
+                handleSelection("Chapters")
             }
             R.id.nav_share -> {
                 handleSelection("Don't you think you have shared enough")

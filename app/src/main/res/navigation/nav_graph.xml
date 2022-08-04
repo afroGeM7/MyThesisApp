@@ -6,7 +6,7 @@
     app:startDestination="@id/NoteListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/NoteListFragment"
         android:name="com.gemmausiku.mythesis.NoteListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_note_list">
@@ -26,5 +26,7 @@
             android:name="myArg"
             app:argType="integer"
             android:defaultValue="-1"/>
+
+
     </fragment>
 </navigation>

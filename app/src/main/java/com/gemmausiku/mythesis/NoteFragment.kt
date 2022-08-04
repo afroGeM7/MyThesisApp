@@ -12,6 +12,7 @@ import com.gemmausiku.mythesis.databinding.FragmentNoteBinding
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
+@Suppress("DEPRECATION")
 class NoteFragment : Fragment() {
     private var notePosition = POSITION_NOT_SET
 
@@ -36,11 +37,11 @@ class NoteFragment : Fragment() {
 
         val adapterChapters = ArrayAdapter(
             requireContext(),
-            R.layout.simple_spinner_item,
+            android.R.layout.simple_spinner_item,
             DataManager.chapters.values.toList()
         )
         // layout with  list  of   options is specified here
-        adapterChapters.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+        adapterChapters.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         // adapter for the spinner  is applied  here using adapterChapters
         binding.spinnerChapters.adapter = adapterChapters
 
@@ -61,18 +62,20 @@ class NoteFragment : Fragment() {
 
     private fun displayNote() {
         val note = DataManager.notes[notePosition]
-        binding.noteTitle.setText(note.title)
-        binding.noteText.setText(note.text)
+        binding.textNoteTitle.setText(note.title)
+        binding.textNoteText.setText(note.text)
 
         val chapterPosition = DataManager.chapters.values.indexOf(note.chapter)
         binding.spinnerChapters.setSelection(chapterPosition)
     }
 
+    @Deprecated("Deprecated in Java", ReplaceWith("inflater.inflate(R.menu.menu_main, menu)"))
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         // if action bar is  available items are added there
         inflater.inflate(R.menu.menu_main, menu)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -89,6 +92,7 @@ class NoteFragment : Fragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onPrepareOptionsMenu(menu: Menu) {
         if (notePosition >= DataManager.notes.lastIndex) {
             val itemMenu = menu.findItem(R.id.action_next)
@@ -105,8 +109,8 @@ class NoteFragment : Fragment() {
 
     private fun saveNote() {
         val note = DataManager.notes[notePosition]
-        note.title = binding.noteTitle.text.toString()
-        note.text = binding.noteText.text.toString()
+        note.title = binding.textNoteTitle.text.toString()
+        note.text = binding.textNoteText.text.toString()
         note.chapter = binding.spinnerChapters.selectedItem as ChapterInfo?
     }
 
