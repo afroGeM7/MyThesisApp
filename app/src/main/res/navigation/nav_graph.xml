@@ -13,19 +13,23 @@
 
         <action
             android:id="@+id/action_NoteListFragment_to_NoteFragment"
-            app:destination="@id/NoteFragment" />
+            app:destination="@id/NoteFragment" >
+            <argument
+                android:name="noteId"
+                app:argType="integer"
+                android:defaultValue="0"/>
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/NoteFragment"
         android:name="com.gemmausiku.mythesis.NoteFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_note">
-
-
         <argument
-            android:name="myArg"
+            android:name="myArgs"
             app:argType="integer"
-            android:defaultValue="-1"/>
+            android:defaultValue="0"/>
 
 
     </fragment>

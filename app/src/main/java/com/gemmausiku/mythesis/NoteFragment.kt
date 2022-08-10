@@ -46,7 +46,7 @@ class NoteFragment : Fragment() {
         binding.spinnerChapters.adapter = adapterChapters
 
         notePosition = savedInstanceState?.getInt(NOTE_POSITION, POSITION_NOT_SET)
-            ?: arguments?.let { NoteFragmentArgs.fromBundle(it).myArg }!!
+            ?: arguments?.let { NoteFragmentArgs.fromBundle(it).myArgs }!!
 
         if (notePosition != POSITION_NOT_SET)
             displayNote()
