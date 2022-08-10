@@ -44,9 +44,8 @@ class NoteListFragment : Fragment() {
     }
 
     private fun onNoteClick(noteId:Int) {
-        val action = NoteListFragmentDirections.actionNoteListFragmentToNoteFragment()
-        //val action = NoteListFragmentDirections.actionNoteListFragmentToNoteFragment(noteId)
-        //activity?.findNavController(R.id.nav_host_fragment_content_main)?.navigate(action)
+        val action = NoteListFragmentDirections.actionNoteListFragmentToNoteFragment(noteId)
+        activity?.findNavController(R.id.nav_host_fragment_content_main)?.navigate(action)
     }
 
 

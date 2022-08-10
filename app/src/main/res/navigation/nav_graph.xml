@@ -18,7 +18,6 @@
                 android:name="noteId"
                 app:argType="integer"
                 android:defaultValue="0"/>
-
         </action>
     </fragment>
     <fragment
