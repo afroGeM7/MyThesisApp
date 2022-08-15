@@ -40,7 +40,7 @@ class NoteListFragment : Fragment() {
 
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_NoteListFragment_to_NoteFragment)
-        }
+        }   //fragment navigation code, navigation is managed automatically
     }
 
     private fun onNoteClick(noteId:Int) {
