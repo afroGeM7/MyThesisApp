@@ -12,6 +12,7 @@ import com.gemmausiku.mythesis.databinding.FragmentNoteBinding
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
+
 @Suppress("DEPRECATION")
 class NoteFragment : Fragment() {
     private var notePosition = POSITION_NOT_SET
@@ -69,11 +70,14 @@ class NoteFragment : Fragment() {
         binding.spinnerChapters.setSelection(chapterPosition)
     }
 
+
+    @Suppress("DEPRECATION")
     @Deprecated("Deprecated in Java", ReplaceWith("inflater.inflate(R.menu.menu_main, menu)"))
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         // if action bar is  available items are added there
         inflater.inflate(R.menu.menu_main, menu)
     }
+
 
     @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -91,6 +95,7 @@ class NoteFragment : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 
     @Deprecated("Deprecated in Java")
     override fun onPrepareOptionsMenu(menu: Menu) {
