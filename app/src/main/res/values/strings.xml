@@ -2,8 +2,8 @@
     <string name="app_name">MyThesis</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Note List Fragment</string>
-    <string name="second_fragment_label">Note Fragment</string>
+    <string name="first_fragment_label">My Thesis</string>
+    <string name="second_fragment_label">Edit note</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="fab">fab</string>
