@@ -140,3 +140,4 @@ class NoteFragment : Fragment() {
         _binding = null
     }
 }
+

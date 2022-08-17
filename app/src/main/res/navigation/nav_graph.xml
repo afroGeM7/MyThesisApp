@@ -10,15 +10,9 @@
         android:name="com.gemmausiku.mythesis.NoteListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_note_list">
-
         <action
             android:id="@+id/action_NoteListFragment_to_NoteFragment"
-            app:destination="@id/NoteFragment" >
-            <argument
-                android:name="noteId"
-                app:argType="integer"
-                android:defaultValue="0"/>
-        </action>
+            app:destination="@id/NoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/NoteFragment"
@@ -28,7 +22,10 @@
         <argument
             android:name="myArgs"
             app:argType="integer"
-            android:defaultValue="-1"/>
+            />
+        <action
+            android:id="@+id/action_NoteFragment_to_NoteListFragment2"
+            app:destination="@id/NoteListFragment" />
 
 
     </fragment>
