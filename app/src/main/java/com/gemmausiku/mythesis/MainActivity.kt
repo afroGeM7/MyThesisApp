@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setupWithNavController(navController)
         navigationView.setNavigationItemSelectedListener(this)
     }
-    override fun onBackPressed() {
+    override fun onBackPressed() { //use own back functionality
         if (drawerLayout.isOpen) {
             drawerLayout.close()
         } else {
@@ -57,12 +57,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    //override fun onSupportNavigateUp(): Boolean {
+       // val navController = findNavController(R.id.nav_host_fragment_content_main)
+        //return navController.navigateUp(appBarConfiguration)
+               // || super.onSupportNavigateUp()
 
-    }
+    //}
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.list_notes -> {
